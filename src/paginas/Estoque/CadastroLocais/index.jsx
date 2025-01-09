@@ -1,26 +1,14 @@
-import React, { useState } from 'react';
-import {
-    Form,
-    Input,
-    Button,
-    Select,
-    InputNumber,
-    Space,
-    Card,
-    Layout,
-    Row,
-    Col
-} from 'antd';
+import React from 'react';
+import { Form, Input, Button, Space, Card, Layout, Row, Col } from 'antd';
 import CustomHeader from '../../Header';
 
 const { Content } = Layout;
-const { Option } = Select;
 
-const CadastroEnderecamento = () => {
+const CadastroLocais = () => {
     const [form] = Form.useForm();
 
     const handleSubmit = (values) => {
-        console.log('Dados do Endereçamento:', values);
+        console.log('Dados do Local:', values);
         // Aqui você pode fazer a requisição para salvar os dados na API
     };
 
@@ -28,21 +16,20 @@ const CadastroEnderecamento = () => {
         <Layout style={{ minHeight: '100vh' }}>
             <CustomHeader>
                 <Content style={{ margin: '24px 16px', padding: 24, background: '#f0f2f5' }}>
-                    <Card title="Cadastro de Endereçamento de Estoque" bordered={false}>
+                    <Card title="Cadastro de Locais de Armazenamento" bordered={false}>
                         <Form
                             form={form}
                             layout="vertical"
                             onFinish={handleSubmit}
-                            initialValues={{ status_endereco: 'ativo' }}
                         >
                             <Row gutter={16}>
                                 <Col span={6}>
                                     <Form.Item
-                                        label="Código do Endereço"
-                                        name="codigo_endereco"
-                                        rules={[{ required: true, message: 'Por favor, insira o código do endereço!' }]}
+                                        label="Código do Local"
+                                        name="codigo_local"
+                                        rules={[{ required: true, message: 'Por favor, insira o código do local!' }]}
                                     >
-                                        <Input placeholder="Digite o código do endereço" />
+                                        <Input placeholder="Digite o código do local" />
                                     </Form.Item>
                                 </Col>
                                 <Col span={6}>
@@ -84,52 +71,6 @@ const CadastroEnderecamento = () => {
                                         <Input placeholder="Digite a posição" />
                                     </Form.Item>
                                 </Col>
-                                <Col span={6}>
-                                    <Form.Item
-                                        label="Capacidade"
-                                        name="capacidade"
-                                        rules={[{ required: true, message: 'Por favor, insira a capacidade!' }]}
-                                    >
-                                        <InputNumber
-                                            placeholder="Digite a capacidade"
-                                            style={{ width: '100%' }}
-                                        />
-                                    </Form.Item>
-                                </Col>
-                                <Col span={6}>
-                                    <Form.Item
-                                        label="Tipo de Armazenamento"
-                                        name="tipo_armazenamento"
-                                    >
-                                        <Select placeholder="Selecione o tipo de armazenamento">
-                                            <Option value="unidades">Unidades</Option>
-                                            <Option value="pallets">Pallets</Option>
-                                            <Option value="caixas">Caixas</Option>
-                                        </Select>
-                                    </Form.Item>
-                                </Col>
-                                <Col span={6}>
-                                    <Form.Item
-                                        label="Status do Endereço"
-                                        name="status_endereco"
-                                    >
-                                        <Select>
-                                            <Option value="ativo">Ativo</Option>
-                                            <Option value="inativo">Inativo</Option>
-                                        </Select>
-                                    </Form.Item>
-                                </Col>
-                            </Row>
-
-                            <Row gutter={16}>
-                                <Col span={6}>
-                                    <Form.Item
-                                        label="Produto(s) Associado(s)"
-                                        name="produtos_associados"
-                                    >
-                                        <Input placeholder="Associe os produtos aqui" />
-                                    </Form.Item>
-                                </Col>
                             </Row>
 
                             <Form.Item>
@@ -150,4 +91,4 @@ const CadastroEnderecamento = () => {
     );
 };
 
-export default CadastroEnderecamento;
+export default CadastroLocais;

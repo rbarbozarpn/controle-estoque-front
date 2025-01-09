@@ -10,7 +10,13 @@ import {
     FormOutlined,
     ShoppingOutlined,
     TeamOutlined,
-    SearchOutlined
+    SearchOutlined,
+    ShopOutlined,
+    EnvironmentOutlined,
+    SwapOutlined,
+    StockOutlined,
+    SolutionOutlined,
+    BankOutlined,
 } from '@ant-design/icons';
 
 const { Header, Sider, Content } = Layout;
@@ -45,16 +51,33 @@ class CustomHeader extends React.Component {
                 children: [
                     {
                         key: '4',
-                        icon: <ShoppingOutlined />,
+                        icon: <ShoppingOutlined />, // Produtos
                         label: 'Produtos',
                     },
                     {
                         key: '5',
-                        icon: <TeamOutlined />,
+                        icon: <UserOutlined />, // Usuários
                         label: 'Usuários',
+                    },
+                    {
+                        key: '8',
+                        icon: <EnvironmentOutlined />, // Cadastro de Locais
+                        label: 'Cad. de Locais',
+                    },
+                    {
+                        key: '9',
+                        icon: <SwapOutlined />, // Cadastro de Itens aos Locais
+                        label: 'Cad. de Itens aos Locais',
+                    },
+                    {
+                        key: '12',
+                        icon: <BankOutlined />, // Cadastro de Clientes
+                        label: 'Empresas',
                     },
                 ],
             },
+            
+            
             {
                 key: 'sub2',
                 icon: <SearchOutlined />,
@@ -62,16 +85,32 @@ class CustomHeader extends React.Component {
                 children: [
                     {
                         key: '6',
-                        icon: <ShoppingOutlined />,
+                        icon: <ShoppingOutlined />, // Produtos
                         label: 'Produtos',
                     },
                     {
                         key: '7',
-                        icon: <TeamOutlined />,
+                        icon: <TeamOutlined />, // Usuários
                         label: 'Usuários',
+                    },
+                    {
+                        key: '10',
+                        icon: <EnvironmentOutlined />, // Locais cadastrados
+                        label: 'Locais Cadastrados',
+                    },
+                    {
+                        key: '11',
+                        icon: <StockOutlined />, // Estoque
+                        label: 'Estoque',
+                    },
+                    {
+                        key: '13',
+                        icon: <BankOutlined />, // Cadastro de Clientes
+                        label: 'Empresas',
                     },
                 ],
             },
+            
             {
                 key: '3',
                 icon: <UploadOutlined />,
